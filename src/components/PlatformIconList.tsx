@@ -11,8 +11,7 @@ import {
 import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
-import { HStack, Icon, Text } from "@chakra-ui/react";
-import { color } from "framer-motion";
+import { HStack, Icon } from "@chakra-ui/react";
 interface Props {
   platforms: Platform[];
 }
