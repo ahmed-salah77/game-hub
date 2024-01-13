@@ -17,7 +17,14 @@ interface Props {
 const GenreList = ({ setSelectedGenre, selectedGenre }: Props) => {
   const { data, isLoading } = useGenres();
   if (isLoading) {
-    return <GenreListSkeleton />;
+    return (
+      <>
+        <Heading marginBottom={5} fontSize="3xl">
+          Genres
+        </Heading>
+        <GenreListSkeleton />
+      </>
+    );
   }
   return (
     <>
