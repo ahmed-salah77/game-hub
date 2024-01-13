@@ -3,7 +3,7 @@ import { Card, CardBody, Image, Heading, HStack } from "@chakra-ui/react";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "../services/image-url";
-import GameEmoji from "./gameEmoji";
+import GameEmoji from "./GameEmoji";
 interface Props {
   game: Game;
 }
