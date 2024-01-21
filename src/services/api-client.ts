@@ -9,11 +9,13 @@ const apiClient = axios.create({
 
 export interface FetchResponse<T> {
   count: number;
+  next: string | null;
+  previous: string | null;
   results: T[];
 }
 
 class APIClient<T> {
-  endpoint;
+  endpoint: string;
   constructor(endpoint: string) {
     this.endpoint = endpoint;
   }
