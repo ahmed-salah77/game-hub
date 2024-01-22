@@ -10,7 +10,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
   const { data, error } = usePlatforms();
   const header = selectedPlatform
     ? data?.results.find((platform) => platform.id == selectedPlatform)?.name
-    : "platform";
+    : "Platform";
   if (error) return null;
   return (
     <Menu>
