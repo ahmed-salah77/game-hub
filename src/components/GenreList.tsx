@@ -12,7 +12,7 @@ import GenreListSkeleton from "./GenreListSkeleton";
 import { Genre } from "../services/genreServices";
 interface Props {
   setSelectedGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenre: number | null;
 }
 const GenreList = ({ setSelectedGenre, selectedGenre }: Props) => {
   const { data, isLoading } = useGenres();
@@ -47,7 +47,7 @@ const GenreList = ({ setSelectedGenre, selectedGenre }: Props) => {
                 variant={"link"}
                 whiteSpace={"wrap"}
                 textAlign="left"
-                fontWeight={selectedGenre?.id == genre.id ? "bold" : "normal"}
+                fontWeight={selectedGenre == genre.id ? "bold" : "normal"}
               >
                 {genre.name}
               </Button>
