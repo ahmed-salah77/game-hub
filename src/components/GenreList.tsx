@@ -9,13 +9,12 @@ import {
 import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
 import GenreListSkeleton from "./GenreListSkeleton";
-import { Genre } from "../services/genreServices";
-interface Props {
-  setSelectedGenre: (genre: Genre) => void;
-  selectedGenre: number | null;
-}
-const GenreList = ({ setSelectedGenre, selectedGenre }: Props) => {
+import useGameQueryStore from "../store";
+
+const GenreList = () => {
   const { data, isLoading } = useGenres();
+  const setSelectedGenre = useGameQueryStore((s) => s.setGenre);
+  const selectedGenre = useGameQueryStore((s) => s.gameQuery.genre);
   if (isLoading) {
     return (
       <>
@@ -42,7 +41,7 @@ const GenreList = ({ setSelectedGenre, selectedGenre }: Props) => {
                 src={getCroppedImageUrl(genre.image_background)}
               />
               <Button
-                onClick={() => setSelectedGenre(genre)}
+                onClick={() => setSelectedGenre(genre.id)}
                 fontSize="lg"
                 variant={"link"}
                 whiteSpace={"wrap"}
