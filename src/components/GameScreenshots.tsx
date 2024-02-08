@@ -1,4 +1,3 @@
-import React from "react";
 import useScreenshots from "../hooks/useScreenshots";
 import { GridItem, Image, SimpleGrid, Spinner } from "@chakra-ui/react";
 
@@ -9,7 +8,7 @@ const GameScreenshots = ({ id }: { id: number }) => {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5} paddingTop={5}>
       {data?.results.map((screen) => (
-        <GridItem key={screen.image} maxW={"400px"}>
+        <GridItem key={screen.image}>
           <Image src={screen.image} />
         </GridItem>
       ))}

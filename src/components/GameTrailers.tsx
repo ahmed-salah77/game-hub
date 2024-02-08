@@ -7,8 +7,9 @@ const GameTrailers = ({ id }: { id: number }) => {
   if (!data) return null;
   const firstTrailer = data.results[0];
   return firstTrailer ? (
-    <Box maxW={"100%"} w={"900px"} marginTop={5}>
+    <Box marginTop={5}>
       <video
+        width={"100%"}
         src={firstTrailer.data[480]}
         controls
         poster={firstTrailer.preview}
