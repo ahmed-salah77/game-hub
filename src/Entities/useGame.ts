@@ -9,10 +9,10 @@ const apiClient = axios.create({
   },
 });
 
-const useGame = (id: string) =>
+const useGame = (slug: string) =>
   useQuery<Game, Error>({
-    queryKey: ["game", id],
-    queryFn: () => apiClient.get<Game>(id).then((res) => res.data),
+    queryKey: ["game", slug],
+    queryFn: () => apiClient.get<Game>(slug).then((res) => res.data),
   });
 
 export default useGame;
