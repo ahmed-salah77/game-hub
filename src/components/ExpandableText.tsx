@@ -1,4 +1,4 @@
-import { Box, Button, Text, HStack } from "@chakra-ui/react";
+import { Box, Button, Text } from "@chakra-ui/react";
 import { ReactNode, useState } from "react";
 interface Props {
   children: ReactNode;
